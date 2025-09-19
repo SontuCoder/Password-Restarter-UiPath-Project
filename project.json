@@ -4,14 +4,20 @@
   "description": "Take in put from mail and verify data with data febric.\r\nMake a new temp password.\r\nSave new temp pass on SQL DB and sand a mail to employee with new password.\r\nAfter recieved new password when employee loged in then make a new permanent password and pass saved SQL DB automaicly.",
   "main": "Main.xaml",
   "dependencies": {
-    "UiPath.Excel.Activities": "[3.1.0-preview]",
+    "UiPath.Database.Activities": "[2.0.0]",
+    "UiPath.DataService.Activities": "[25.2.0]",
     "UiPath.Mail.Activities": "[2.4.10]",
-    "UiPath.System.Activities": "[25.4.4]",
-    "UiPath.UIAutomation.Activities": "[25.10.7]",
-    "UiPath.WebAPI.Activities": "[2.1.0-preview]"
+    "UiPath.System.Activities": "[25.8.1]",
+    "UiPath.UIAutomation.Activities": "[25.10.13]",
+    "UiPath.WebAPI.Activities": "[1.21.1]"
   },
   "webServices": [],
-  "entitiesStores": [],
+  "entitiesStores": [
+    {
+      "serviceDocument": ".entities/EntitiesStore.json",
+      "namespace": "Password_Restarter"
+    }
+  ],
   "schemaVersion": "4.0",
   "studioVersion": "25.0.167.0",
   "projectVersion": "1.0.0",
