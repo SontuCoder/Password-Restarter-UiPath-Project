@@ -15,7 +15,9 @@
   "entitiesStores": [
     {
       "serviceDocument": ".entities/EntitiesStore.json",
-      "namespace": "Password_Restarter"
+      "tenantName": "DefaultTenant",
+      "namespace": "Password_Restarter",
+      "uniqueReference": "/IoKIUQJ+yc2d9FqJXVhVk8MsgBsNzNrkNKvchQw5uE="
     }
   ],
   "schemaVersion": "4.0",
