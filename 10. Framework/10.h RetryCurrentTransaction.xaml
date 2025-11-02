@@ -21,6 +21,9 @@
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>System.Collections</x:String>
       <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Numerics</x:String>
     </sco1:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -43,9 +46,23 @@
       <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
       <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
     </sco1:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart sap2010:Annotation.AnnotationText="Manage the retrying mechanism for the framework and it is invoked in SetTransactionStatus.xaml when a system exception occurs. &#xA;The retrying method is based on the configurations defined in Config.xlsx." DisplayName="Retry Current Transaction" sap:VirtualizedContainerService.HintSize="959.2,676.8" sap2010:WorkflowViewState.IdRef="Flowchart_7">
+  <Flowchart sap2010:Annotation.AnnotationText="Manage the retrying mechanism for the framework and it is invoked in SetTransactionStatus.xaml when a system exception occurs. &#xA;The retrying method is based on the configurations defined in Config.xlsx." DisplayName="Retry Current Transaction" sap:VirtualizedContainerService.HintSize="880.8000000000001,563.2" sap2010:WorkflowViewState.IdRef="Flowchart_7">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -61,7 +78,10 @@
     <Flowchart.StartNode>
       <x:Reference>__ReferenceID7</x:Reference>
     </Flowchart.StartNode>
-    <FlowDecision x:Name="__ReferenceID7" Condition="[Convert.ToInt32(idictAssets(&quot;MaxRetryNumber&quot;))&gt;0]" DisplayName="Retry transaction?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_12">
+    <FlowDecision x:Name="__ReferenceID7" DisplayName="Retry transaction?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_12">
+      <FlowDecision.Condition>
+        <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="Convert.ToInt32(idictAssets(&quot;P2 Max retry&quot;))&gt;0" />
+      </FlowDecision.Condition>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -74,7 +94,10 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <FlowDecision.True>
-        <FlowDecision x:Name="__ReferenceID1" Condition="[iointRetryNumber &gt;= Convert.ToInt32(idictAssets(&quot;MaxRetryNumber&quot;))]" DisplayName="Max retries reached?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_11">
+        <FlowDecision x:Name="__ReferenceID1" DisplayName="Max retries reached?" sap:VirtualizedContainerService.HintSize="60,60" sap2010:WorkflowViewState.IdRef="FlowDecision_11">
+          <FlowDecision.Condition>
+            <VisualBasicValue x:TypeArguments="x:Boolean" DisplayName="Visual basic value" ExpressionText="iointRetryNumber &gt;= Convert.ToInt32(idictAssets(&quot;P2 Max retry&quot;))" />
+          </FlowDecision.Condition>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -95,7 +118,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">160,435 160,485</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessage DisplayName="10.h Error Log Max retries reached" sap:VirtualizedContainerService.HintSize="110.4,70.4" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Error" Message="[idictAssets(&quot;LogMessage_ApplicationException&quot;).ToString+&quot; Max number of retries reached. &quot;+isysexSystemException.Message+&quot; at Source: &quot;+isysexSystemException.Source]">
+              <ui:LogMessage DisplayName="10.h Error Log Max retries reached" sap:VirtualizedContainerService.HintSize="110.4,70.4" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Error" Message="[&quot;Application exception &quot;+&quot; Max number of retries reached. &quot;+isysexSystemException.Message+&quot; at Source: &quot;+isysexSystemException.Source]">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -152,7 +175,7 @@
                   <av:PointCollection x:Key="ConnectorLocation">400.2,435.4 400.2,465.4 420.2,465.4 420.2,495</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:LogMessage DisplayName="10.h Warn Log Retry" sap:VirtualizedContainerService.HintSize="110.4,70.4" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Warn" Message="[idictAssets(&quot;LogMessage_ApplicationException&quot;).ToString+&quot; Retry: &quot;+iointRetryNumber.ToString+&quot;. &quot;+isysexSystemException.Message+&quot; at Source: &quot;+isysexSystemException.Source]" />
+              <ui:LogMessage DisplayName="10.h Warn Log Retry" sap:VirtualizedContainerService.HintSize="110.4,70.4" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="Warn" Message="[&quot;Application exception &quot;+&quot; Retry: &quot;+iointRetryNumber.ToString+&quot;. &quot;+isysexSystemException.Message+&quot; at Source: &quot;+isysexSystemException.Source]" />
               <FlowStep.Next>
                 <FlowStep x:Name="__ReferenceID5" sap2010:WorkflowViewState.IdRef="FlowStep_31">
                   <sap:WorkflowViewStateService.ViewState>
@@ -184,7 +207,7 @@
               <av:PointCollection x:Key="ConnectorLocation">590.2,315.4 590.2,630.2 215.4,630.2</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:LogMessage DisplayName="10.h Error Log No retry" sap:VirtualizedContainerService.HintSize="110.4,70.4" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Error" Message="[idictAssets(&quot;LogMessage_ApplicationException&quot;).ToString+isysexSystemException.Message+&quot; at Source: &quot;+isysexSystemException.Source]" />
+          <ui:LogMessage DisplayName="10.h Error Log No retry" sap:VirtualizedContainerService.HintSize="110.4,70.4" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="Error" Message="[&quot;Application exception &quot;+isysexSystemException.Message+&quot; at Source: &quot;+isysexSystemException.Source]" />
           <FlowStep.Next>
             <x:Reference>__ReferenceID0</x:Reference>
           </FlowStep.Next>

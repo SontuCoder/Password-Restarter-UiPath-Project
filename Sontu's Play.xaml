@@ -1,0 +1,184 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Sontu_s_Play" VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="Sontu_s_Play_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:p="clr-namespace:Password_Restarter;assembly=DataService.Password_Restarter" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uda="clr-namespace:UiPath.DataService.Activities;assembly=UiPath.DataService.Activities.Core" xmlns:udam="clr-namespace:UiPath.DataService.Activities.Models;assembly=UiPath.DataService.Activities.Core" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.DataService.Activities</x:String>
+      <x:String>UiPath.DataService.Definition</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>Password_Restarter</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Numerics</x:String>
+      <x:String>UiPath.DataService.Activities.Models</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Activities.Core</AssemblyReference>
+      <AssemblyReference>UiPath.DataService.Definition</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Database.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>DataService.Password_Restarter</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Sontu_s_Play" sap:VirtualizedContainerService.HintSize="864.0000000000001,616.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:IList(p:EmpPermanentPassword)" Name="lstRecords" />
+      <Variable x:TypeArguments="x:String" Name="strPass" />
+      <Variable x:TypeArguments="p:TempPassword" Name="record" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="433.6,56.8" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="416,224" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <uda:QueryEntityRecords x:TypeArguments="p:EmpPermanentPassword" TotalRecords="{x:Null}" ContinueOnError="False" DisplayName="Query Entity Records" EntityId="8d0bb9cf-26a0-f011-b3cd-002248a46af2" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="382.4,164" sap2010:WorkflowViewState.IdRef="QueryEntityRecords`1_1" OutputRecords="[lstRecords]" QueriedEntityId="8d0bb9cf-26a0-f011-b3cd-002248a46af2" Skip="0" SortAscending="True" SortByField="Id" TimeoutInMs="30000" Top="100">
+            <uda:QueryEntityRecords.FilterArguments>
+              <uda:FilterArgument FilterActivityType="{x:Null}">
+                <uda:FilterArgument.Filter>
+                  <uda:GroupFilter Index="0" Operator="AND">
+                    <uda:GroupFilter.Filters>
+                      <scg:List x:TypeArguments="uda:SimpleFilter" Capacity="4">
+                        <uda:SimpleFilter ExpressionValue="{x:Null}" FieldName="EmpEmail" FieldType="UiPath.DataService.Core.Models.EntityField" Operator="=" ValueIndex="0" />
+                      </scg:List>
+                    </uda:GroupFilter.Filters>
+                    <uda:GroupFilter.Groups>
+                      <scg:List x:TypeArguments="uda:GroupFilter" Capacity="0" />
+                    </uda:GroupFilter.Groups>
+                  </uda:GroupFilter>
+                </uda:FilterArgument.Filter>
+              </uda:FilterArgument>
+            </uda:QueryEntityRecords.FilterArguments>
+            <uda:QueryEntityRecords.FilterValues>
+              <scg:List x:TypeArguments="InArgument" Capacity="4">
+                <InArgument x:TypeArguments="x:String">subhadip.maity@abcd.com</InArgument>
+              </scg:List>
+            </uda:QueryEntityRecords.FilterValues>
+          </uda:QueryEntityRecords>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <Assign sap:VirtualizedContainerService.HintSize="433.6,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[strPass]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[New String(Enumerable.Repeat("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", 4).Select(Function(s) s(CInt((New Random()).Next(s.Length)))).ToArray())]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <uda:CreateEntityRecord x:TypeArguments="p:TempPassword" InputEntity="{x:Null}" IsInRecordView="{x:Null}" VisibleDynamicPropertiesInfo="{x:Null}" ContinueOnError="False" DisplayName="20.b Create Entity Record - Temp pass" EntityId="bd5df87f-26a0-f011-b3cd-002248a46af2" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="433.6,257.6" sap2010:WorkflowViewState.IdRef="CreateEntityRecord`1_1" InputEntityInFieldView="[new Password_Restarter.TempPassword() With {  .EmpEmail = &quot;subhadip.maity@gmail.com&quot;,  .EmpTempPass = strPass }]" OutputEntity="[record]" TimeoutInMs="30000">
+      <uda:CreateEntityRecord.State>
+        <udam:RecordState RequiredFieldCount="2">
+          <udam:RecordState.SelectedFields>
+            <scg:List x:TypeArguments="udam:DynamicEntityField" Capacity="2">
+              <udam:DynamicEntityField Id="c75df87f-26a0-f011-b3cd-002248a46af2" IsRequired="True" Name="EmpEmail">
+                <udam:DynamicEntityField.ArgumentValue>
+                  <InArgument x:TypeArguments="x:String">subhadip.maity@gmail.com</InArgument>
+                </udam:DynamicEntityField.ArgumentValue>
+              </udam:DynamicEntityField>
+              <udam:DynamicEntityField Id="c85df87f-26a0-f011-b3cd-002248a46af2" IsRequired="True" Name="EmpTempPass">
+                <udam:DynamicEntityField.ArgumentValue>
+                  <InArgument x:TypeArguments="x:String">[strPass]</InArgument>
+                </udam:DynamicEntityField.ArgumentValue>
+              </udam:DynamicEntityField>
+            </scg:List>
+          </udam:RecordState.SelectedFields>
+        </udam:RecordState>
+      </uda:CreateEntityRecord.State>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uda:CreateEntityRecord>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="433.6,165.6" sap2010:WorkflowViewState.IdRef="LogMessage_1" Message="[&quot;&quot;]" />
+  </Sequence>
+</Activity>
