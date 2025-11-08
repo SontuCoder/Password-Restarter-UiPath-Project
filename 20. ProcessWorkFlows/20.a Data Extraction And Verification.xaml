@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="_20_a_Data_Extraction_And_Verification" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:p="clr-namespace:Password_Restarter;assembly=DataService.Password_Restarter" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:uda="clr-namespace:UiPath.DataService.Activities;assembly=UiPath.DataService.Activities.Core" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="_20_a_Data_Extraction_And_Verification" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:p="clr-namespace:Password_Restarter;assembly=DataService.Password_Restarter" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:uda="clr-namespace:UiPath.DataService.Activities;assembly=UiPath.DataService.Activities.Core" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="iodictLogs" Type="InOutArgument(scg:Dictionary(x:String, x:Object))" />
     <x:Property Name="ijobjRegex" Type="InArgument(njl:JObject)" />
@@ -124,7 +124,7 @@
       <AssemblyReference>DataService.Password_Restarter</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="_20_a_Data_Extraction_And_Verification" sap:VirtualizedContainerService.HintSize="864.0000000000001,438.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="_20_a_Data_Extraction_And_Verification" sap:VirtualizedContainerService.HintSize="683.2,1024" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strSecrateCode" />
     </Sequence.Variables>
@@ -133,10 +133,10 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="20.a Try Catch - Handle Data Extraction" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="20.a Try Catch - Handle Data Extraction" sap:VirtualizedContainerService.HintSize="548.8,526.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -155,7 +155,7 @@
                     <OutArgument x:TypeArguments="x:Object">[iodictLogs("EmpId")]</OutArgument>
                   </ui:AssignOperation.To>
                   <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:Object">[System.Text.RegularExpressions.Regex.Match(imailMessageTransactionItem.Body,ijobjRegex("EmpID").ToString).Groups(0).Value.Trim]</InArgument>
+                    <InArgument x:TypeArguments="x:Object">[System.Text.RegularExpressions.Regex.Match(imailMessageTransactionItem.Body,ijobjRegex("EmpID").ToString).Groups(1).Value.Trim]</InArgument>
                   </ui:AssignOperation.Value>
                 </ui:AssignOperation>
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
@@ -163,7 +163,7 @@
                     <OutArgument x:TypeArguments="x:Object">[iodictLogs("EmpEmail")]</OutArgument>
                   </ui:AssignOperation.To>
                   <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:Object">[System.Text.RegularExpressions.Regex.Match(imailMessageTransactionItem.Body,ijobjRegex("Email").ToString).Groups(0).Value.Trim]</InArgument>
+                    <InArgument x:TypeArguments="x:Object">[System.Text.RegularExpressions.Regex.Match(imailMessageTransactionItem.Body,ijobjRegex("Email").ToString).Groups(1).Value.Trim]</InArgument>
                   </ui:AssignOperation.Value>
                 </ui:AssignOperation>
                 <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
@@ -171,7 +171,7 @@
                     <OutArgument x:TypeArguments="x:String">[strSecrateCode]</OutArgument>
                   </ui:AssignOperation.To>
                   <ui:AssignOperation.Value>
-                    <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(imailMessageTransactionItem.Body,ijobjRegex("SecrateCode").ToString).Groups(0).Value.Trim]</InArgument>
+                    <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Match(imailMessageTransactionItem.Body,ijobjRegex("SecrateCode").ToString).Groups(1).Value.Trim]</InArgument>
                   </ui:AssignOperation.Value>
                 </ui:AssignOperation>
               </scg:List>
@@ -226,7 +226,7 @@
         </Sequence>
       </TryCatch.Finally>
     </TryCatch>
-    <If Condition="[String.IsNullOrEmpty(iodictLogs(&quot;EmpEmail&quot;).ToString()) OR String.IsNullOrEmpty(iodictLogs(&quot;EmpId&quot;).ToString()) Or String.IsNullOrEmpty(strSecrateCode)]" DisplayName="20.a If - Check all data extracted or not" sap:VirtualizedContainerService.HintSize="449.6,56.8" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[String.IsNullOrEmpty(iodictLogs(&quot;EmpEmail&quot;).ToString()) OR String.IsNullOrEmpty(iodictLogs(&quot;EmpId&quot;).ToString()) Or String.IsNullOrEmpty(strSecrateCode)]" DisplayName="20.a If - Check all data extracted or not" sap:VirtualizedContainerService.HintSize="548.8,56.8" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -260,9 +260,8 @@
         </Sequence>
       </If.Else>
     </If>
-    <Sequence DisplayName="20.a Sequence - DB data verification" sap:VirtualizedContainerService.HintSize="449.6,301.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
+    <Sequence DisplayName="20.a Sequence - DB data verification" sap:VirtualizedContainerService.HintSize="548.8,417.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
       <Sequence.Variables>
-        <Variable x:TypeArguments="sd:DataTable" Name="dtEmpData" />
         <Variable x:TypeArguments="x:Boolean" Name="boolVerified" />
         <Variable x:TypeArguments="scg:IList(p:EmpPermanentPassword)" Name="lstRecords" />
       </Sequence.Variables>
@@ -272,7 +271,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uda:QueryEntityRecords x:TypeArguments="p:EmpPermanentPassword" TotalRecords="{x:Null}" ContinueOnError="False" DisplayName="20.a Search Extry on DB" EntityId="8d0bb9cf-26a0-f011-b3cd-002248a46af2" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="416,56.8" sap2010:WorkflowViewState.IdRef="QueryEntityRecords`1_2" OutputRecords="[lstRecords]" QueriedEntityId="8d0bb9cf-26a0-f011-b3cd-002248a46af2" Skip="0" SortAscending="True" SortByField="Id" TimeoutInMs="30000" Top="100">
+      <uda:QueryEntityRecords x:TypeArguments="p:EmpPermanentPassword" TotalRecords="{x:Null}" ContinueOnError="False" DisplayName="20.a Search Extry on DB" EntityId="8d0bb9cf-26a0-f011-b3cd-002248a46af2" ExpansionDepth="2" sap:VirtualizedContainerService.HintSize="416,172.8" sap2010:WorkflowViewState.IdRef="QueryEntityRecords`1_2" OutputRecords="[lstRecords]" QueriedEntityId="8d0bb9cf-26a0-f011-b3cd-002248a46af2" Skip="0" SortAscending="True" SortByField="Id" TimeoutInMs="30000" Top="100">
         <uda:QueryEntityRecords.FilterArguments>
           <uda:FilterArgument FilterActivityType="{x:Null}">
             <uda:FilterArgument.Filter>
@@ -296,7 +295,7 @@
         </uda:QueryEntityRecords.FilterValues>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
@@ -314,7 +313,7 @@
         </ui:IfElseIfV2.Else>
         <ui:IfElseIfV2.ElseIfs>
           <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
-            <ui:IfElseIfBlock BlockType="ElseIf" Condition="[dtEmpData.RowCount &gt; 1]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_2">
+            <ui:IfElseIfBlock BlockType="ElseIf" Condition="[lstRecords.Count &gt; 1]" DisplayName="If else if block" sap2010:WorkflowViewState.IdRef="IfElseIfBlock_2">
               <ui:IfElseIfBlock.Then>
                 <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,24.8" sap2010:WorkflowViewState.IdRef="Sequence_19">
                   <sap:WorkflowViewStateService.ViewState>

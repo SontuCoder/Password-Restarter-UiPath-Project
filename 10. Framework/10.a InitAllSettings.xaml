@@ -164,12 +164,18 @@
               <OutArgument x:TypeArguments="s:String[]">[arrstrAssets]</OutArgument>
             </ui:AssignOperation.To>
             <ui:AssignOperation.Value>
-              <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[{"P2 BRE mail Subject","P2 Exception Mail Move Folder",
-"P2 Input Mail Account","P2 Input Mail Folder",
-"P2 Input Mail Numbers","P2 Mail Templates",
+              <InArgument x:TypeArguments="s:String[]" xml:space="preserve">[{"P2 BRE mail Subject",
+"P2 Exception Mail Move Folder",
+"P2 Input Mail Account",
+"P2 Input Mail Folder",
+"P2 Input Mail Numbers",
+"P2 Mail Templates",
 "P2 Max Consecutive retry",
 "P2 Max retry",
-"P2 Regex File","P2 Storage Bucket","P2 Success Mail Move Folder","P2 Success mail Subject"}]</InArgument>
+"P2 Regex File",
+"P2 Storage Bucket",
+"P2 Success Mail Move Folder",
+"P2 Success mail Subject"}]</InArgument>
             </ui:AssignOperation.Value>
           </ui:AssignOperation>
           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
